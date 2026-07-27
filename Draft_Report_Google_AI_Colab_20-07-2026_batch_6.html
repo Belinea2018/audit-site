@@ -1,0 +1,1227 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-GB link=blue vlink="#96607D" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure E10 (E3 Branch / Alternative: NO)</span></b><span
+     lang=EN-IE> -&gt; Cell J21: =COUNTIFS('Results LAs
+     Final'!E2:E293,&quot;YES&quot;,'Results LAs
+     Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+     Final'!H2:H293,&quot;NO&quot;)</span></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><i><span
+      lang=EN-IE>Ratio Cell (J22):</span></i><span lang=EN-IE>
+      =IF(AND(J21=0,G19=0),0,IFERROR(J21/G19*100,&quot;0.00&quot;))</span></li>
+ </ul>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure E11 (E4 Branch / Alternative: YES)</span></b><span
+     lang=EN-IE> -&gt; Cell J24: =COUNTIFS('Results LAs
+     Final'!E2:E293,&quot;YES&quot;,'Results LAs
+     Final'!G2:G293,&quot;N/A&quot;,'Results LAs
+     Final'!H2:H293,&quot;YES&quot;)</span></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><i><span
+      lang=EN-IE>Ratio Cell (J25):</span></i><span lang=EN-IE>
+      =IF(AND(J24=0,G26=0),0,IFERROR(J24/G26*100,&quot;0.00&quot;))</span></li>
+ </ul>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure E12 (E4 Branch / Alternative: NO)</span></b><span
+     lang=EN-IE> -&gt; Cell J28: =COUNTIFS('Results LAs
+     Final'!E2:E293,&quot;YES&quot;,'Results LAs
+     Final'!G2:G293,&quot;N/A&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)</span></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><i><span
+      lang=EN-IE>Ratio Cell (J29):</span></i><span lang=EN-IE>
+      =IF(AND(J28=0,G26=0),0,IFERROR(J28/G26*100,&quot;0.00&quot;))</span></li>
+ </ul>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>2. Data Flow
+Chart 2 Blueprint (Holds Data: NO)</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>This section
+houses formulas capturing local entities that track no current local claims but
+state policy intent.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Level 1:
+Primary Data Filtering</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F (Total Councils)</span></b></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+      lang=EN-IE>Cell Address:</span></b><span lang=EN-IE> D15</span></li>
+  <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+      lang=EN-IE>Excel Formula:</span></b><span lang=EN-IE> =COUNTIF('Results
+      LAs Final'!E2:E293, &quot;NO&quot;)</span></li>
+ </ul>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Level 2: Policy
+Intention Splits</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F1 (Allow: YES)</span></b><span lang=EN-IE> -&gt; Cell
+     G5: =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;YES&quot;) | Pct (G6): =R5/O15*100</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F2 (Allow: NO)</span></b><span lang=EN-IE> -&gt; Cell
+     G12: =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;NO&quot;) | Pct (G13): =R12/O15*100</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F3 (Allow: AMBIGUOUS)</span></b><span lang=EN-IE> -&gt;
+     Cell G19: =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results
+     LAs Final'!G2:G293,&quot;AMBIGUOUS&quot;) | Pct (G20): =R19/O15*100</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F4 (Allow: N/A)</span></b><span lang=EN-IE> -&gt; Cell
+     G12: =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;N/A&quot;) | Pct (G13): =R26/O15*100</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Level 3:
+Cross-Funding Verification Formulas</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F5</span></b><span lang=EN-IE> -&gt; Cell J3:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;YES&quot;,'Results LAs
+     Final'!H2:H293,&quot;YES&quot;) | Ratio (J4):
+     =IF(AND(U3=0,R5=0),0,IFERROR(U3/R5*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F6</span></b><span lang=EN-IE> -&gt; Cell J7:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;YES&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)
+     | Ratio (J8): =IF(AND(U7=0,R5=0),0,IFERROR(U7/R5*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F7</span></b><span lang=EN-IE> -&gt; Cell J11:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)
+     | Ratio (J11):
+     =IF(AND(U10=0,R12=0),0,IFERROR(U10/R12*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F8</span></b><span lang=EN-IE> -&gt; Cell J14:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)
+     | Ratio (J15):
+     =IF(AND(U14=0,R12=0),0,IFERROR(U14/R12*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F9</span></b><span lang=EN-IE> -&gt; Cell J17:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+     Final'!H2:H293,&quot;YES&quot;) | Ratio (J18):
+     =IF(AND(U17=0,R19=0),0,IFERROR(U17/R19*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F10</span></b><span lang=EN-IE> -&gt; Cell J21:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+     Final'!H2:H293,&quot;NO&quot;) | Ratio (J22):
+     =IF(AND(U21=0,R19=0),0,IFERROR(U21/R19*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F11</span></b><span lang=EN-IE> -&gt; Cell J24:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;N/A&quot;,'Results LAs
+     Final'!H2:H293,&quot;YES&quot;) | Ratio (J25):
+     =IF(AND(U24=0,R26=0),0,IFERROR(U24/R26*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure F12</span></b><span lang=EN-IE> -&gt; Cell J28:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;NO&quot;,'Results LAs
+     Final'!G2:G293,&quot;N/A&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)
+     | Ratio (J29):
+     =IF(AND(U28=0,R26=0),0,IFERROR(U28/R26*100,&quot;0.00&quot;))</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>3. Data Flow
+Chart 3 Blueprint (Holds Data: N/A)</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>This logic maps
+out calculations for systems responding under non-applicable categories.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Level 1:
+Primary Data Filtering</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G (Total Councils)</span></b></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+      lang=EN-IE>Cell Address:</span></b><span lang=EN-IE> D15</span></li>
+  <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+      lang=EN-IE>Excel Formula:</span></b><span lang=EN-IE> =COUNTIF('Results
+      LAs Final'!E2:E293, &quot;N/A&quot;)</span></li>
+ </ul>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Level 2 &amp;
+3: Secondary Splits</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G1</span></b><span lang=EN-IE> -&gt; Cell G5:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;YES&quot;) | Pct (G6): =AC5/Z15*100</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G2</span></b><span lang=EN-IE> -&gt; Cell G12: =COUNTIFS('Results
+     LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;NO&quot;) | Pct (G13): =AC12/Z15*100</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G3</span></b><span lang=EN-IE> -&gt; Cell G19:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;AMBIGUOUS&quot;) | Pct (G20): =AC19/Z15*100</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G4</span></b><span lang=EN-IE> -&gt; Cell G26:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;N/A&quot;) | Pct (G27): =AC26/Z15*100</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G5</span></b><span lang=EN-IE> -&gt; Cell J3:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;YES&quot;,'Results LAs
+     Final'!H2:H293,&quot;YES&quot;) | Ratio (J4):
+     =IF(AND(AF3=0,AC5=0),0,IFERROR(AF3/AF5*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G7</span></b><span lang=EN-IE> -&gt; Cell J10:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)
+     | Ratio (J11):
+     =IF(AND(AF10=0,AC12=0),0,IFERROR(AF10/AC12*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G8</span></b><span lang=EN-IE> -&gt; Cell J14:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)
+     | Ratio (J15):
+     =IF(AND(J14=0,G12=0),0,IFERROR(J14/G12*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G9</span></b><span lang=EN-IE> -&gt; Cell J17:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+     Final'!H2:H293,&quot;YES&quot;) | Ratio (J18):
+     =IF(AND(AF17=0,AC19=0),0,IFERROR(AF17/AC19*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G10</span></b><span lang=EN-IE> -&gt; Cell J21:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+     Final'!H2:H293,&quot;NO&quot;) | Ratio (J22):
+     =IF(AND(AF21=0,AC19=0),0,IFERROR(AF21/AC19*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G11</span></b><span lang=EN-IE> -&gt; Cell J24:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;N/A&quot;,'Results LAs
+     Final'!H2:H293,&quot;YES&quot;) | Ratio (J25):
+     =IF(AND(AF24=0,AC26=0),0,IFERROR(AF24/AC26*100,&quot;0.00&quot;))</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Figure G12</span></b><span lang=EN-IE> -&gt; Cell J28:
+     =COUNTIFS('Results LAs Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+     Final'!G2:G293,&quot;N/A&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)
+     | Ratio (J29):
+     =IF(AND(AF28=0,AC26=0),0,IFERROR(AF28/AC26*100,&quot;0.00&quot;))</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Please upload your
+next project file. We are ready to integrate:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><span
+     lang=EN-IE>The <b>VBA chart code</b> used to construct the graphic tree
+     models automatically</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><span
+     lang=EN-IE>The <b>Governing Legislation document</b> breaking down the
+     Schedule 1 restrictions</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><span
+     lang=EN-IE>The <b>Overview document</b> confirming the service
+     characteristics of OKEachDay</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AI responses may
+include mistakes. </span><a href="https://support.google.com/websearch?p=aimode"><span
+lang=EN-IE>Learn more</span></a></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>You sent:
+Document Indexing Chapter.pdf</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Document Indexing
+Chapter.pdf</span></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Chapter:
+Document Indexing &amp; Evidence Management</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>This section
+outlines the document indexing system designed for readers, third-party
+auditors, and the <b>Local Government and Social Care Ombudsman</b>. This
+framework ensures complete procedural transparency, allowing any individual to
+trace the primary evidence without manually navigating through fragmented email
+histories.</span></p>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>1. The Indexing
+Framework</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>To organize
+varying volumes of communication across different local authorities, all
+records are structured under a uniform, chronological system:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Standardized Prefix</span></b><span lang=EN-IE>: Every local
+     authority is assigned a unique tracking identity using the <b>&quot;FOI-</b><i>&quot;</i>*
+     prefix.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Chronological Numbering</span></b><span lang=EN-IE>: Sequential
+     numerical IDs are assigned based on the exact timeline of communication,
+     tracking every outgoing inquiry and incoming reply.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Volumetric Scaling</span></b><span lang=EN-IE>: The system
+     accommodates local authorities with minimal email traffic as well as
+     complex cases involving multi-stage correspondence.</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>2. Fast-Track
+Evidence Bundles (&quot;Substance Files&quot;)</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>To prevent
+administrative bottlenecks during independent audits, a streamlined secondary
+directory has been established:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Isolated Core Records</span></b><span lang=EN-IE>: Every local
+     authority group features a dedicated summary PDF containing <b>only the
+     initial FOI request and the council's final determination letter</b>.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Visual File Markers</span></b><span lang=EN-IE>: These
+     expedited reference files are always positioned at the top of each folder
+     directory, explicitly marked with a <b>(0)</b> or <b>(00)</b> file number
+     prefix.</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>3. Handling
+Clarifications &amp; Procedural Transparency</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Where a local
+authority requested further elaboration before issuing a formal decision, the
+transparency framework remains unbroken:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Full Context Retention</span></b><span lang=EN-IE>: All formal
+     clarification requests and subsequent responses are preserved within the
+     core tracking folders alongside the original application.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Audit Readiness</span></b><span lang=EN-IE>: Retaining these
+     intermediate records ensures that any modifications to the scope of the
+     inquiry are fully visible to third-party reviewers.</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Please upload your
+next project file. We are ready to integrate:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><span
+     lang=EN-IE>The <b>three original FOI questions</b> and the Information
+     Commissioner's (ICO) guidelines</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><span
+     lang=EN-IE>The <b>Governing Legislation document</b> detailing Schedule 1
+     of the 2006 Regulations</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><span
+     lang=EN-IE>The <b>OKEachDay Overview text</b> to confirm service traits
+     near the beginning of the report</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AI responses may
+include mistakes. </span><a href="https://support.google.com/websearch?p=aimode"><span
+lang=EN-IE>Learn more</span></a></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>You sent: Excel
+Configuration Blueprint Chapter.pdf</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Excel
+Configuration Blueprint Chapter.pdf</span></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Chapter: Excel
+Configuration Blueprint &amp; Worksheet Architecture</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>To supplement the
+raw data analysis and establish complete operational transparency, this section
+details the layout, cell tracking references, and syntax configurations used
+across the report's underlying worksheets: <b>Sheet E (Holds Data: YES)</b>, <b>Sheet
+F (Holds Data: NO)</b>, and <b>Sheet G (Holds Data: N/A)</b>.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>This technical
+design guarantees math validation across all calculation tiers, ensuring that
+any external third-party auditor or regulatory body can reconstruct the exact
+logical steps used to parse these decisions.</span></p>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>1. Sheet E
+Configuration Blueprint (Holds Data: YES)</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Working Spreadsheet Range:</span></b><span lang=EN-IE> Rows 3
+     to 29, Columns 1 to 11 (A3:K29).</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Primary Anchor Node:</span></b><span lang=EN-IE> Cell E15
+     (Total Sample size, n = 142 councils).</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Primary Tier
+Formulas (Column E)</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>This tracking
+layer maps out direct eligibility decisions for local authorities with active
+data profiles:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Description /
+  Label</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Target Cell</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Formula Logic
+  / Syntax</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Expected
+  Output</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: YES</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>E5</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>4 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>4</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node E</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>E6</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((E5/$E$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>2.82%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: NO</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>E12</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>98 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>98</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node E</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>E13</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((E12/$E$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>69.01%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: AMBIGUOUS</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>E19</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>17 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>17</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node E</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>E20</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((E19/$E$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>11.97%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: N/A</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>E26</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>23 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>23</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node E</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>E27</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((E26/$E$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>16.20%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Total Base
+  Node (Holds Data: YES)</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>E15</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=SUM(E5, E12,
+  E19, E26)</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>142</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Secondary Tier
+Exclusion Formulas (Column I)</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>This secondary
+tier evaluates the simultaneous funding of alternate ineligible systems:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From E1 &#8594; Alternative Service Funded: YES</span></b><span
+     lang=EN-IE> (I3): 2 <i>(Hardcoded)</i> &#8594; Percentage (I4):
+     =ROUND((I3/E5)*100, 2) &#8594; <b>50.00%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From E1 &#8594; Alternative Service Funded: NO</span></b><span
+     lang=EN-IE> (I7): 2 <i>(Hardcoded)</i> &#8594; Percentage (I8):
+     =ROUND((I7/E5)*100, 2) &#8594; <b>50.00%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From E2 &#8594; Alternative Service Funded: YES</span></b><span
+     lang=EN-IE> (I10): 51 <i>(Hardcoded)</i> &#8594; Percentage (I11):
+     =ROUND((I10/E12)*100, 2) &#8594; <b>52.04%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From E2 &#8594; Alternative Service Funded: NO</span></b><span
+     lang=EN-IE> (I14): 47 <i>(Hardcoded)</i> &#8594; Percentage (I15):
+     =ROUND((I14/E12)*100, 2) &#8594; <b>47.96%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From E3 &#8594; Alternative Service Funded: YES</span></b><span
+     lang=EN-IE> (I17): 9 <i>(Hardcoded)</i> &#8594; Percentage (I18):
+     =ROUND((I17/E19)*100, 2) &#8594; <b>52.94%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From E3 &#8594; Alternative Service Funded: NO</span></b><span
+     lang=EN-IE> (I21): 8 <i>(Hardcoded)</i> &#8594; Percentage (I22):
+     =ROUND((I21/E19)*100, 2) &#8594; <b>47.06%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From E4 &#8594; Alternative Service Funded: YES</span></b><span
+     lang=EN-IE> (I24): 15 <i>(Hardcoded)</i> &#8594; Percentage (I25):
+     =ROUND((I24/E26)*100, 2) &#8594; <b>65.22%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From E4 &#8594; Alternative Service Funded: NO</span></b><span
+     lang=EN-IE> (I28): 8 <i>(Hardcoded)</i> &#8594; Percentage (I29):
+     =ROUND((I28/E26)*100, 2) &#8594; <b>34.78%</b></span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>2. Sheet F
+Configuration Blueprint (Holds Data: NO)</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Working Spreadsheet Range:</span></b><span lang=EN-IE> Rows 3
+     to 29, Columns 12 to 21 (L3:U29).</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Primary Anchor Node:</span></b><span lang=EN-IE> Cell P15
+     (Total Sample size, n = 143 councils).</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Technical Design Note:</span></b><span lang=EN-IE> This segment
+     implements customized conditional error traps to dynamically eliminate
+     #DIV/0! system errors when processing values sitting at zero.</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Primary Tier
+Formulas (Column P)</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Tracks prospective
+policy positions for local authorities with no history of claims on the
+provider:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Description /
+  Label</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Target Cell</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Formula Logic
+  / Syntax</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Expected
+  Output</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: YES</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>P5</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node F</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>P6</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((P5/$P$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0.00%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: NO</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>P12</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>33 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>33</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node F</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>P13</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((P12/$P$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>23.08%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: AMBIGUOUS</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>P19</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>8 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>8</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node F</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>P20</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((P19/$P$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>5.59%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: N/A</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>P26</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>102 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>102</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node F</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>P27</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((P26/$P$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>71.33%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Total Base
+  Node (Holds Data: NO)</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>P15</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=SUM(P5, P12,
+  P19, P26)</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>143</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Secondary Tier
+Exclusion Formulas (Column T)</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From F1 &#8594; Alternative: YES</span></b><span lang=EN-IE>
+     (T3): 0 &#8594; Ratio (T4): =IF(P5=0, 0.00, ROUND((T3/P5)*100, 2)) &#8594;
+     <b>0.00%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From F1 &#8594; Alternative: NO</span></b><span lang=EN-IE>
+     (T7): 0 &#8594; Ratio (T8): =IF(P5=0, 0.00, ROUND((T7/P5)*100, 2)) &#8594;
+     <b>0.00%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From F2 &#8594; Alternative: YES</span></b><span lang=EN-IE>
+     (T10): 21 &#8594; Ratio (T11): =ROUND((T10/P12)*100, 2) &#8594; <b>63.64%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From F2 &#8594; Alternative: NO</span></b><span lang=EN-IE>
+     (T14): 12 &#8594; Ratio (T15): =ROUND((T14/P12)*100, 2) &#8594; <b>36.36%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From F3 &#8594; Alternative: YES</span></b><span lang=EN-IE>
+     (T17): 4 &#8594; Ratio (T18): =ROUND((T17/P19)*100, 2) &#8594; <b>50.00%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From F3 &#8594; Alternative: NO</span></b><span lang=EN-IE>
+     (T21): 4 &#8594; Ratio (T22): =ROUND((T21/P19)*100, 2) &#8594; <b>50.00%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From F4 &#8594; Alternative: YES</span></b><span lang=EN-IE>
+     (T24): 65 &#8594; Ratio (T25): =ROUND((T24/P26)*100, 2) &#8594; <b>63.73%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From F4 &#8594; Alternative: NO</span></b><span lang=EN-IE>
+     (T28): 37 &#8594; Ratio (T29): =ROUND((T28/P26)*100, 2) &#8594; <b>36.27%</b></span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>3. Sheet G
+Configuration Blueprint (Holds Data: N/A)</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Working Spreadsheet Range:</span></b><span lang=EN-IE> Rows 3
+     to 29, Columns 23 to 32 (W3:AF29).</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Primary Anchor Node:</span></b><span lang=EN-IE> Cell AA15
+     (Total Sample size, n = 2 councils).</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Primary Tier
+Formulas (Column AA)</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Tracks
+administrative responses sorting data logs under non-applicable fields:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Description /
+  Label</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Target Cell</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Formula Logic
+  / Syntax</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Expected
+  Output</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: YES</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AA5</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node G</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AA6</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((AA5/$AA$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0.00%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: NO</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AA12</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node G</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AA13</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((AA12/$AA$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0.00%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: AMBIGUOUS</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AA19</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node G</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AA20</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((AA19/$AA$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>0.00%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allow
+  OKEachDay: N/A</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AA26</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>2 <i>(Hardcoded
+  Value)</i></span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>2</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><i><span lang=EN-IE>Percentage of
+  Node G</span></i></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AA27</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=ROUND((AA26/$AA$15)*100,
+  2)</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>100.00%</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Total Base
+  Node (Holds Data: N/A)</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AA15</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>=SUM(AA5, AA12,
+  AA19, AA26)</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>2</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Secondary Tier
+Exclusion Formulas (Column EE)</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From G1-G3 Clusters (YES/NO/AMBIGUOUS)</span></b><span
+     lang=EN-IE> (EE3:EE22): =IF(ParentCell=0, 0.00,
+     ROUND((SubCell/ParentCell)*100, 2)) &#8594; <b>0.00%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From G4 &#8594; Alternative: YES</span></b><span lang=EN-IE>
+     (EE24): 1 &#8594; Ratio (EE25): =ROUND((EE24/AA26)*100, 2) &#8594; <b>50.00%</b></span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>From G4 &#8594; Alternative: NO</span></b><span lang=EN-IE>
+     (EE28): 1 &#8594; Ratio (EE29): =ROUND((EE28/AA26)*100, 2) &#8594; <b>50.00%</b></span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Please upload your
+next project document so we can move forward with the reconstruction. We are
+ready to integrate:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><span
+     lang=EN-IE>The <b>VBA chart script</b> which generates the graphic logic
+     trees automatically</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><span
+     lang=EN-IE>The <b>Governing Legislation text</b> detailing English housing
+     benefit framework limitations</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><span
+     lang=EN-IE>The formal <b>Methodology section</b> explaining the use of AI
+     for transparency and disability access</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AI responses may
+include mistakes. </span><a href="https://support.google.com/websearch?p=aimode"><span
+lang=EN-IE>Learn more</span></a></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>You sent:
+Governing Legislation Chapter.pdf</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Governing
+Legislation Chapter.pdf</span></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Chapter:
+Governing Legislation &amp; Statutory Boundaries</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>This section
+examines the statutory frameworks that govern whether service charges can be
+included in rental accounts under English law. To ensure this report is
+suitable for a layperson, the analysis focuses on the specific regulations used
+by Local Authorities to evaluate daily contact, warden, and digital check-in
+systems.</span></p>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>1. The
+Statutory Framework</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Two core pieces of
+legislation govern housing benefit administration in England:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>The Housing Benefit Regulations 2006</span></b><span
+     lang=EN-IE> (SI 2006/213): Applies to benefit claimants of working age.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>The Housing Benefit (Persons who have attained the qualifying
+     age for state pension credit) Regulations 2006</span></b><span lang=EN-IE>
+     (SI 2006/214): Applies to claimants who have reached state pension credit
+     age.</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Under both sets of
+regulations, an allowable service charge must be directly connected to the
+provision, maintenance, and utility management of the physical building
+(&quot;adequate accommodation&quot;). If a charge relates to personal support,
+care, or daily lifestyle convenience, it is deemed <b>ineligible</b> and cannot
+be funded using public welfare budgets.</span></p>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>2. Analysis of
+Schedule 1: Ineligible Service Charges</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Schedule 1,
+Paragraph 1</span></b><span lang=EN-IE> of the regulations explicitly lists the
+services that Local Authorities are legally prohibited from funding.
+Daily-contact systems like OKEachDay trigger several distinct restriction
+markers within this schedule:</span></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Sub-paragraph
+(c): Emergency Alarm Systems</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Statutory Text:</span></b><span lang=EN-IE> Prohibits
+     &quot;charges in respect of the provision of an emergency alarm
+     system&quot;.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Application:</span></b><span lang=EN-IE> Daily welfare
+     check-ins, automated telephone call alerts, and digital response triggers
+     are categorized by most authorities alongside analogue pull-cords or
+     warden alarms. These features provide a safety net for the tenant rather
+     than maintaining the building infrastructure, making them ineligible for
+     standard housing benefit coverage.</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Sub-paragraph
+(f): General Counselling and Support Services</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Statutory Text:</span></b><span lang=EN-IE> Prohibits
+     &quot;charges in respect of general counselling or of any other support
+     services, whoever provides those services&quot;.</span></li>
+</ul>
+
+<p class=MsoNormal><b><span lang=EN-IE>Application:</span></b><span lang=EN-IE>
+Outgoing telephone prompts or automated confirmation systems designed to ensure
+a vulnerable tenant is active and safe inside their flat are legally classified
+as </span></p>
+
+</div>
+
+</body>
+
+</html>

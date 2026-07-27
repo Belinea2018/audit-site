@@ -1,0 +1,780 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+.MsoChpDefault
+	{font-family:"Aptos",serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-GB style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>The data in this file should be cross referenced against
+files:</p>
+
+<p class=MsoNormal>Data_Flowchart_1.html</p>
+
+<p class=MsoNormal>Data_Flowchart_2.html</p>
+
+<p class=MsoNormal>Data_Flowchart_3.html</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>I have placed the data across multiple pages in such a way
+that each set of data remains complete and has not broken over pages, so to try
+and avoid the data being broken up so that you may read it better and prevent
+Data Drift.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>DATA FLOW CHART 1: VALID RESPONSES - HOLDS DATA: YES</p>
+
+<p class=MsoNormal>LEVEL 1</p>
+
+<p class=MsoNormal>Figure: E                           </p>
+
+<p class=MsoNormal>Formula Cell Reference: D15</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIF('Results LAs Final'!E2:E293, &quot;YES&quot;)</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>LEVEL 2</p>
+
+<p class=MsoNormal>Figure: E1                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: G5</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs Final'!G2:G293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G6</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=G5/D15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal> Figure: E2                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: G12</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs Final'!G2:G293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G13</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=G12/D15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: E3                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: G19</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs
+Final'!G2:G293,&quot;AMBIGUOUS&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G20</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=G12/D15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: E4                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: G26</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs
+Final'!G2:G293,&quot;AMBIGUOUS&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G27</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=G26/D15*100 </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:250%'>LEVEL 3</p>
+
+<p class=MsoNormal>Figure: E5                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: J3</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs
+Final'!G2:G293,&quot;YES&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J4</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(J3=0,G5=0),0,IFERROR(J3/G5*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: E6</p>
+
+<p class=MsoNormal>Formula Cell Reference: J7          </p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs Final'!G2:G293,&quot;YES&quot;,'Results
+LAs Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J8</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(J7=0,G5=0),0,IFERROR(J7/G5*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>Figure: E7</p>
+
+<p class=MsoNormal>Formula Cell Reference: J10</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs
+Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J11</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(J10=0,G12=0),0,IFERROR(J10/G12*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: E8     </p>
+
+<p class=MsoNormal>Formula Cell Reference: J14        </p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs
+Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J15        </p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(J14=0,G12=0),0,IFERROR(J14/G12*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>Figure: E9     </p>
+
+<p class=MsoNormal>Formula Cell Reference: J17</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs
+Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+Final'!H2:H293,&quot;YES&quot;) </p>
+
+<p class=MsoNormal>Formula Cell Reference: J18        </p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(J17=0,G19=0),0,IFERROR(J17/G19*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: E10   </p>
+
+<p class=MsoNormal>Formula Cell Reference: J21</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs Final'!E2:E293,&quot;YES&quot;,'Results
+LAs Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J22</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(J21=0,G19=0),0,IFERROR(J21/G19*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>Figure: E11</p>
+
+<p class=MsoNormal>Formula Cell Reference: J24</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs
+Final'!G2:G293,&quot;N/A&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J25        </p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(J24=0,G26=0),0,IFERROR(J24/G26*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: E12</p>
+
+<p class=MsoNormal>Formula Cell Reference: J28</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;YES&quot;,'Results LAs
+Final'!G2:G293,&quot;N/A&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J29                  </p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(J28=0,G26=0),0,IFERROR(J28/G26*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>DATA FLOW CHART 2: VALID RESPONSES - HOLDS DATA: NO</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>LEVEL 1</p>
+
+<p class=MsoNormal>Figure: F                           </p>
+
+<p class=MsoNormal>Formula Cell Reference: D15</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIF('Results LAs Final'!E2:E293, &quot;NO&quot;)</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Level 2</p>
+
+<p class=MsoNormal>Figure: F1                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: G5</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs Final'!G2:G293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G6</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=R5/O15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: F2                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: G12</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs Final'!G2:G293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G13</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=R12/O15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: F3                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: G19</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs
+Final'!G2:G293,&quot;AMBIGUOUS&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G20</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=R19/O15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: F4                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: G12</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs Final'!G2:G293,&quot;N/A&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G13</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=R26/O15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Level 3</p>
+
+<p class=MsoNormal>Figure: F5</p>
+
+<p class=MsoNormal>Formula Cell Reference: J3</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs
+Final'!G2:G293,&quot;YES&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J4</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(U3=0,R5=0),0,IFERROR(U3/R5*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: F6                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: J7 </p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs
+Final'!G2:G293,&quot;YES&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J8</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(U7=0,R5=0),0,IFERROR(U7/R5*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: F7                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: J11</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs
+Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J11</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(U10=0,R12=0),0,IFERROR(U10/R12*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>Figure: F8                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: J14</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs
+Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J15</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(U14=0,R12=0),0,IFERROR(U14/R12*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: F9                         </p>
+
+<p class=MsoNormal>Formula Cell Reference: J17</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs
+Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J18</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(U17=0,R19=0),0,IFERROR(U17/R19*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>Figure: F10                       </p>
+
+<p class=MsoNormal>Formula Cell Reference: J21</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs
+Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J22</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(U21=0,R19=0),0,IFERROR(U21/R19*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: F11                       </p>
+
+<p class=MsoNormal>Formula Cell Reference: J24</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs
+Final'!G2:G293,&quot;N/A&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Formula Cell Reference: J25</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(U24=0,R26=0),0,IFERROR(U24/R26*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>Figure: F12             </p>
+
+<p class=MsoNormal>Formula Cell Reference: J28</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;NO&quot;,'Results LAs
+Final'!G2:G293,&quot;N/A&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J29</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(U28=0,R26=0),0,IFERROR(U28/R26*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>DATA FLOW CHART 3: VALID RESPONSES - HOLDS DATA: N/A</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>LEVEL 1</p>
+
+<p class=MsoNormal>Figure: G                          </p>
+
+<p class=MsoNormal>Formula Cell Reference: D15</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIF('Results LAs Final'!E2:E293, &quot;N/A&quot;)</p>
+
+<p class=MsoNormal>Level 2</p>
+
+<p class=MsoNormal>Figure: G1                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: G5</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs Final'!G2:G293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G6</p>
+
+<p class=MsoNormal>Formula: </p>
+
+<p class=MsoNormal>=AC5/Z15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: G2                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: G12</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs Final'!G2:G293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G13</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=AC12/Z15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: G3                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: G19</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+Final'!G2:G293,&quot;AMBIGUOUS&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G20</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=AC19/Z15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: G4                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: G26</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs Final'!G2:G293,&quot;N/A&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: G27 </p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=AC26/Z15*100</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>LEVEL 3</p>
+
+<p class=MsoNormal>Figure: G5                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: J3</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+Final'!G2:G293,&quot;YES&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J4</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(AF3=0,AC5=0),0,IFERROR(AF3/AF5*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: G6                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: J7</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(AF3=0,AC5=0),0,IFERROR(AF3/AF5*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>Formula Cell Reference: J8</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(AF7=0,AC3=0),0,IFERROR(AF7/AF5*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: G7                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: J10</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;) </p>
+
+<p class=MsoNormal>Formula Cell Reference: J11</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(AF10=0,AC12=0),0,IFERROR(AF10/AC12*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: G8                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: J14</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+Final'!G2:G293,&quot;NO&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J15</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(J14=0,G12=0),0,IFERROR(J14/G12*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>Figure: G9                        </p>
+
+<p class=MsoNormal>Formula Cell Reference: J17</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J18</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(AF17=0,AC19=0),0,IFERROR(AF17/AC19*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: G10                      </p>
+
+<p class=MsoNormal>Formula Cell Reference: J21</p>
+
+<p class=MsoNormal>Formula: </p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+Final'!G2:G293,&quot;AMBIGUOUS&quot;,'Results LAs
+Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J22</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(AF21=0,AC19=0),0,IFERROR(AF21/AC19*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>Figure: G11             </p>
+
+<p class=MsoNormal>Formula Cell Reference: J24</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+Final'!G2:G293,&quot;N/A&quot;,'Results LAs Final'!H2:H293,&quot;YES&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J25</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(AF24=0,AC26=0),0,IFERROR(AF24/AC26*100,&quot;0.00&quot;))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Figure: G12                      </p>
+
+<p class=MsoNormal>Formula Cell Reference: J28</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=COUNTIFS('Results LAs
+Final'!E2:E293,&quot;N/A&quot;,'Results LAs
+Final'!G2:G293,&quot;N/A&quot;,'Results LAs Final'!H2:H293,&quot;NO&quot;)</p>
+
+<p class=MsoNormal>Formula Cell Reference: J29</p>
+
+<p class=MsoNormal>Formula:</p>
+
+<p class=MsoNormal>=IF(AND(AF28=0,AC26=0),0,IFERROR(AF28/AC26*100,&quot;0.00&quot;))</p>
+
+</div>
+
+</body>
+
+</html>

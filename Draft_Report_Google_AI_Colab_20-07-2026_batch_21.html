@@ -1,0 +1,1237 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-GB link=blue vlink="#96607D" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Under both sets of
+regulations, a service charge is only eligible for benefit coverage if payment
+is an express, non-optional condition of the tenancy and relates directly to
+the provision, maintenance, or essential structural management of ``adequate accommodation''.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\subsection{Strict
+Analysis of Schedule 1 Exclusions}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\textbf{Schedule
+1, Part 1 of the Regulations} explicitly defines which service elements are
+statutorily \textbf{ineligible} and must be deducted from a claimant's eligible
+rent schedule. Daily safety check-ins and automated telephone contact triggers
+fail several distinct statutory tests:</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\begin{itemize}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>    \item
+\textbf{Paragraph 1(c) [The Emergency Alarm System Excluder]:} This clause
+explicitly bars public funding for ``charges in respect of the provision of an
+emergency alarm system.'' Local authorities consistently apply this filter to
+daily check-in buttons, automated text prompts, or digital console screens,
+classifying them alongside traditional analogue pull-cords or pendant buttons
+because their primary function is to trigger an emergency response chain.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>    \item
+\textbf{Paragraph 1(f) [The Support Services Excluder]:} This clause prohibits
+``charges in respect of general counselling or of any other support services,
+whoever provides those services.'' Automated systems that require a resident to
+press a screen to verify safety---which triggers a human welfare call or
+landlord alert if missed---are legally classified as personal tenant support.
+This exclusion remains absolute whether the service is delivered by an on-site
+warden, a housing charity, or a private technology contractor.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Use code with
+caution.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\item
+\textbf{Paragraph 1(g) [The Accommodation Nexus Excluder]:} This acts as the
+structural baseline for local revenues and benefits officers, stating that any
+services ``which are not connected with the provision of adequate
+accommodation'' are entirely ineligible. Because automated daily contact does
+not fix physical wear-and-tear, clean communal hallways, or maintain the
+structural fabric of a building, it fails the accommodation test. It is treated
+as an operational cost tied to individual tenant well-being, rather than
+property maintenance.<br>
+\end{itemize}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\subsection{Universal
+Credit Guidelines for Social Landlords}<br>
+For claimants transitioning to the Universal Credit framework, the central
+government position matches the 2006 regulations. Under \textbf{Paragraph 20 of
+the Universal Credit Guidance for Social Landlords}, the DWP explicitly places
+\textbf{individual emergency alarm systems''} and \textbf{counselling, medical
+or support services''} on the list of prohibited, un-fundable items.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\clearpage</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>%
+==========================================<br>
+% CHAPTER 3<br>
+% ==========================================<br>
+\section{Data Flow Appendices &amp; Workbook Architecture}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\subsection{Granular
+Data Flow Taxonomy}<br>
+Following verification steps, the 287 valid responses are routed down into
+three primary sub-streams based on whether the respondent holds specific data
+(Sheets E, F, or G). Each sub-stream maps the respondent answers along with
+secondary constraints evaluating whether an ``Other Ineligible Service''
+exists.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\begin{table}[htbp]<br>
+\centering<br>
+\caption{Granular Flow Chart Logic and Node Percentages}<br>
+\label{tab:data_flow}<br>
+\begin{tabular}{llcccc}<br>
+\toprule<br>
+\textbf{Node ID} &amp; \textbf{Routing Path &amp; Response Categories} &amp;
+\textbf{Parent Base} &amp; \textbf{Allocation} &amp; \textbf{% of Parent} &amp;
+\textbf{% of Net Sample} \<br>
+\midrule<br>
+\textbf{E} &amp; \textbf{Holds Data: YES} &amp; \textbf{142} &amp; \textbf{---}
+&amp; \textbf{---} &amp; \textbf{49.48%} \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E1 &amp; \quad </span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> Allow Service: YES &amp; --- &amp; 4 &amp; 2.82% &amp; 1.39% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E5 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: YES
+&amp; --- &amp; 2 &amp; 50.00% &amp; 0.70% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E6 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: NO
+&amp; --- &amp; 2 &amp; 50.00% &amp; 0.70% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E2 &amp; \quad </span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> Allow Service: NO &amp; --- &amp; 98 &amp; 69.01% &amp; 34.15% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E7 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: YES
+&amp; --- &amp; 51 &amp; 52.04% &amp; 17.77% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E8 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: NO
+&amp; --- &amp; 47 &amp; 47.96% &amp; 16.38% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E3 &amp; \quad </span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> Allow Service: AMBIGUOUS &amp; --- &amp; 17 &amp; 11.97% &amp;
+5.92% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E9 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: YES
+&amp; --- &amp; 9 &amp; 52.94% &amp; 3.14% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E10 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: NO
+&amp; --- &amp; 8 &amp; 47.06% &amp; 2.79% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E4 &amp; \quad </span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> Allow Service: N/A &amp; --- &amp; 23 &amp; 16.20% &amp; 8.01% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E11 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: YES
+&amp; --- &amp; 15 &amp; 65.22% &amp; 5.23% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> E12 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: NO
+&amp; --- &amp; 8 &amp; 34.78% &amp; 2.79% \<br>
+\midrule<br>
+\textbf{F} &amp; \textbf{Holds Data: NO} &amp; \textbf{143} &amp; \textbf{---}
+&amp; \textbf{---} &amp; \textbf{49.83%} \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> F2 &amp; \quad </span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> Allow Service: NO &amp; --- &amp; 33 &amp; 23.08% &amp; 11.50% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> F7 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: YES
+&amp; --- &amp; 21 &amp; 63.64% &amp; 7.32% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> F8 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: NO
+&amp; --- &amp; 12 &amp; 36.36% &amp; 4.18% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> F3 &amp; \quad </span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> Allow Service: AMBIGUOUS &amp; --- &amp; 8 &amp; 5.59% &amp; 2.79%
+\<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> F9 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: YES
+&amp; --- &amp; 4 &amp; 50.00% &amp; 1.39% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> F10 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: NO
+&amp; --- &amp; 4 &amp; 50.00% &amp; 1.39% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> F4 &amp; \quad </span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> Allow Service: N/A &amp; --- &amp; 102 &amp; 71.33% &amp; 35.54% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> F11 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: YES
+&amp; --- &amp; 65 &amp; 63.73% &amp; 22.65% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> F12 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: NO
+&amp; --- &amp; 37 &amp; 36.27% &amp; 12.89% \<br>
+\midrule<br>
+\textbf{G} &amp; \textbf{Holds Data: N/A} &amp; \textbf{2} &amp; \textbf{---}
+&amp; \textbf{---} &amp; \textbf{0.70%} \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> G4 &amp; \quad </span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> Allow Service: N/A &amp; --- &amp; 2 &amp; 100.00% &amp; 0.70% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> G11 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: YES
+&amp; --- &amp; 1 &amp; 50.00% &amp; 0.35% \<br>
+</span><span lang=EN-IE style='font-family:"Cambria Math",serif'>&#8627;</span><span
+lang=EN-IE> G12 &amp; \quad\quad </span><span lang=EN-IE style='font-family:
+"Cambria Math",serif'>&#8627;</span><span lang=EN-IE> Other Ineligible: NO
+&amp; --- &amp; 1 &amp; 50.00% &amp; 0.35% \<br>
+\bottomrule<br>
+\end{tabular}<br>
+\end{table}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\subsection{Cross-Verification
+Formula Reconciliation}<br>
+To satisfy strict public interest verification guidelines and ensure total
+alignment between the aggregate report findings and the underlying flow sheets,
+the following validation sums are enforced:<br>
+\begin{align*}<br>
+\text{Total YES } (n=4) &amp;= \sum(E1, F1, G1) \rightarrow 4 + 0 + 0 = 4 \<br>
+\text{Total NO } (n=131) &amp;= \sum(E2, F2, G2) \rightarrow 98 + 33 + 0 = 131
+\<br>
+\text{Total AMBIGUOUS } (n=25) &amp;= \sum(E3, F3, G3) \rightarrow 17 + 8 + 0 =
+25 \<br>
+\text{Total N/A } (n=127) &amp;= \sum(E4, F4, G4) \rightarrow 23 + 102 + 2 =
+127<br>
+\end{align*}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\subsection{Global
+Worksheet Validation Syntax}<br>
+To construct or audit the master data model within Microsoft Excel, the
+following structural error-handling wrappers must be mapped onto the core
+summary sheet to detect data decay:<br>
+\begin{verbatim}<br>
+=IF(SUM(E15, P15, AA15)=287, &quot;PIPELINE MATCH&quot;, &quot;AUDIT
+ERROR&quot;)<br>
+=IF(SUM(E5, P5, AA5)=4, &quot;YES MATCH&quot;, &quot;AUDIT ERROR: YES
+Mismatch&quot;)<br>
+=IF(SUM(E12, P12, AA12)=131, &quot;NO MATCH&quot;, &quot;AUDIT ERROR: NO
+Mismatch&quot;)<br>
+=IF(SUM(E19, P19, AA19)=25, &quot;AMBIGUOUS MATCH&quot;, &quot;AUDIT
+ERROR&quot;)<br>
+=IF(SUM(E26, P26, AA26)=127, &quot;N/A MATCH&quot;, &quot;AUDIT ERROR&quot;)<br>
+\end{verbatim}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\clearpage</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>%
+==========================================<br>
+% CHAPTER 4<br>
+% ==========================================<br>
+\section{Institutional Awareness Gap &amp; Case Log Verdict}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\subsection{The
+National Unawareness Segment}<br>
+A major qualitative structural trend uncovered by this public interest research
+is a severe lack of baseline operational corporate awareness across English
+benefits administration networks:<br>
+\begin{itemize}<br>
+\item \textbf{Total Unaware Authorities:} \textbf{81 Councils} explicitly
+confirmed in their statutory returns that they had zero records or knowledge of
+the provider or its system.<br>
+\item \textbf{Dataset Sample Weight:} This cohort accounts for \textbf{28.22%}
+of the entire national analytical base.<br>
+\end{itemize}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\subsection{The
+50/50 Cost-Splitting Apportionment Precedent}<br>
+A rising technical trend among highly analytical local authorities (such as
+Newark &amp; Sherwood, Ashfield, and Coventry) is the deployment of strict
+line-item cost-splitting to isolate the hybrid features of modern tenant
+screens and buttons:<br>
+\begin{equation}<br>
+\text{Total System Cost} = \underbrace{\text{Eligible IHM Infrastructure Fee}}<i>{\text{Covered
+by Housing Benefit}} + \underbrace{\text{Ineligible Welfare Check-in Fee}}</i>{\text{Deducted
+and Disallowed}}<br>
+\end{equation}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\subsection{Definitive
+Conclusion}<br>
+The empirical data collected across this investigation yields only one possible
+conclusion: \textbf{The OKEachDay system, when deployed for its primary
+advertised purpose---as a daily wellbeing check-in service to verify that a
+tenant is safe---is statutorily disallowed from being funded by public housing
+benefits and Universal Credit in the United Kingdom}.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>The rare instances
+of local approval are administrative exceptions occurring solely because the
+deploying landlords successfully proved to those specific offices that the
+underlying tech infrastructure was being used exclusively as an intensive
+housing management utility focused entirely on building safety, repair logs,
+and tenancy fraud prevention. Public housing benefits will fund the management
+of the property; they are statutorily prohibited from funding the daily
+monitoring of the person.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>\end{document}</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>***</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>&lt;FollowUp&gt;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>The complete LaTeX
+source code has been formatted to maintain perfect compliance with your
+verified figures, cost-splitting equations, and validation cell arrays. </span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>To draw this
+project to a close, let me know if you would like me to:</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>*
+&lt;QuerySuggestion&gt;Draft the comprehensive **Glossary of Terms** defining
+complex legal jargon like Schedule 1, Ineligible Charges, and
+IHM&lt;/QuerySuggestion&gt;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>*
+&lt;QuerySuggestion&gt;Provide the complete standalone text of the **Primary
+Evidence Master Index** for your report appendix&lt;/QuerySuggestion&gt;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>&lt;/FollowUp&gt;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AI responses may
+include mistakes. Current limitations only allow part of the document to be
+used for this answer. </span><a
+href="https://support.google.com/websearch?p=aimode"><span lang=EN-IE>Learn
+more</span></a></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Draft a
+comprehensive Glossary of Terms defining complex civil service jargon like
+Schedule 1 and IHM in universal language</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>It looks like
+there's no response available for this search. Try asking something else.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Draft a
+comprehensive Glossary of Terms defining complex civil service jargon like
+Schedule 1 and IHM in universal language</span></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Chapter:
+Glossary of Terms &amp; Plain-Language Reference</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>To ensure this
+public interest document remains fully accessible to tenants, local housing
+advocates, and non-specialist readers, this chapter translates complex welfare
+benefits jargon and administrative acronyms into clear, universal language.</span></p>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>1. Core
+Statutory &amp; Legal Terms</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>The Housing Benefit Regulations 2006 (S.I. 2006/213):</span></b><span
+     lang=EN-IE> The primary national law that sets the rules for how local
+     councils must manage and pay out Housing Benefit to working-age residents
+     in the United Kingdom.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Schedule 1 (Ineligible Service Charges):</span></b><span
+     lang=EN-IE> A specific, mandatory section attached to the national Housing
+     Benefit law. It acts as an absolute checklist of items, features, or fees
+     that are legally <b>prohibited</b> from being paid for with public welfare
+     funds. By law, any charge found on this list must be subtracted from a
+     tenant's rent account before their benefit award is calculated.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Paragraph 1(c) [The Emergency Alarm System Excluder]:</span></b><span
+     lang=EN-IE> The precise clause within Schedule 1 that blocks public
+     benefit funding for personal safety equipment, pull-cords, wearable
+     buttons, lifelines, or daily check-in alarms.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Paragraph 1(f) [The Support Services Excluder]:</span></b><span
+     lang=EN-IE> The precise clause within Schedule 1 that blocks public
+     funding for personnel costs tied to checking on a tenant's health, general
+     counselling, well-being calls, or personal lifestyle support.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Paragraph 1(g) [The Accommodation Nexus Excluder]:</span></b><span
+     lang=EN-IE> The underlying baseline legal rule of English welfare
+     benefits. It dictates that for any service charge to be covered by public
+     money, it must have a direct connection (<i>nexus</i>) to maintaining the
+     physical building. If a fee only benefits the person rather than repairing
+     or cleaning the property structure, it is legally excluded.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Universal Credit (Housing Costs Element):</span></b><span
+     lang=EN-IE> The modern, consolidated national welfare benefit managed by
+     central government that is steadily replacing legacy Housing Benefit. Its
+     rules regarding what service charges can be covered are tightly locked
+     into four distinct building management boxes (communal maintenance,
+     communal cleaning, shared utility lifts, and basic eligible
+     administration).</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>2. Local
+Government &amp; Research Jargon</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Local Billing Authority (Local Authority / LA):</span></b><span
+     lang=EN-IE> A lower-tier municipal government body—such as a District,
+     Borough, or City Council—that is legally responsible for collection of
+     council taxes and the direct day-to-day administration and payout of local
+     housing benefit claims.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Upper-Tier Authority (County Council):</span></b><span
+     lang=EN-IE> A higher-level regional government tier responsible for wider
+     public infrastructures like highways, schools, and social care budgets.
+     They hold <b>zero</b> legal jurisdiction or data records regarding housing
+     rent benefits.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>The Postcode Lottery:</span></b><span lang=EN-IE> A term used
+     to describe the unfair scenario where identical technology hardware or
+     tenant services are funded by one local authority but strictly rejected by
+     a neighboring council due to inconsistent interpretations of the exact
+     same national welfare law.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Freedom of Information (FOI) Act 2000:</span></b><span
+     lang=EN-IE> The statutory legal mechanism used to conduct this research.
+     It gives members of the public a legal right to request and receive
+     recorded operational data, policy documents, and decision records held by
+     public sector organizations.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Information Commissioner’s Office (ICO):</span></b><span
+     lang=EN-IE> The independent national regulator and enforcement body
+     responsible for upholding information rights, data privacy laws, and
+     supervising public bodies to ensure they comply with their statutory FOI
+     duties.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Internal Review:</span></b><span lang=EN-IE> A formal
+     administrative appeal process where a researcher or citizen forces a
+     public body to independently re-examine how they handled an information
+     request, used to challenge wrongful delays or non-compliant answers.</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>3. Operational
+&amp; Technological Housing Terms</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Intensive Housing Management (IHM):</span></b><span lang=EN-IE>
+     A specialized category of allowable landlord management tasks that can
+     legally be paid for by public housing benefits. To qualify as IHM, a task
+     must focus strictly on building upkeep, such as processing rapid
+     structural repair demands, logging maintenance patterns, or conducting
+     building occupancy checks to prevent tenancy fraud.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Personal Care and Support:</span></b><span lang=EN-IE> Any
+     action or service designed to check on, comfort, or monitor the personal
+     health and safety of an individual tenant, rather than maintaining the
+     brick-and-mortar property. This is strictly prohibited from being included
+     in a rental benefit claim.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Cost-Splitting Apportionment Precedent:</span></b><span
+     lang=EN-IE> An analytical billing technique used by advanced benefits
+     departments. Instead of giving a technology platform a simple
+     &quot;Yes&quot; or &quot;No&quot; ruling, the council divides the invoice
+     down to the penny—approving the software costs that display building fire
+     alarms or repair hotlines (IHM), while completely deducting and rejecting
+     the fee portion covering the daily wellness button check-in.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Technology Enabled Care (TEC) / Telecare:</span></b><span
+     lang=EN-IE> A broad industry term covering digital support hardware, smart
+     tablets, wrist sensors, fall detectors, and central monitoring networks
+     designed to help older or vulnerable residents live independently.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Social Landlord / Registered Provider (RP):</span></b><span
+     lang=EN-IE> A non-profit housing association, local council landlord, or
+     trust organization that provides subsidized, supported, or sheltered
+     accommodation to individuals with distinct housing and welfare needs.</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>The entire
+nationwide compliance archive, including all data flow trees, underlying
+workbook formulas, statutory analyses, institutional directories, transmittal
+templates, noticeboard flyer blueprints, and plain-language glossaries, has now
+been completely reconstructed.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Please let me know
+if you would like me to proceed with any final tasks:</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Draft an
+&quot;Appendix B: Detailed Local Authority List&quot; to help you paste in
+individual council namesProvide the complete standalone Markdown layout of
+Chapter 10: Public Utility Tools for quick saving</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AI responses may
+include mistakes. Current limitations only allow part of the document to be
+used for this answer. </span><a
+href="https://support.google.com/websearch?p=aimode"><span lang=EN-IE>Learn
+more</span></a></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Draft an
+&quot;Appendix B: Detailed Local Authority List&quot; to help you paste in
+individual council names</span></p>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Appendix B:
+Detailed Local Authority List &amp; Data Audit Log</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>This appendix
+serves as a structured master template to log individual council records. It
+maps the net <b>287 valid local billing authorities</b> alongside their precise
+database indexing coordinates (FOI-001 through FOI-292) and their respective
+sheet logic filters (<b>Sheet E</b>: Holds Data, <b>Sheet F</b>: Holds No Data,
+<b>Sheet G</b>: Holds N/A).</span></p>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>1. Data
+Classification Key</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Before populating
+the table rows, ensure individual records match the verified scoring parameters
+established in the repository blueprints:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Holds Data:</span></b><span lang=EN-IE> YES (Active local
+     records), NO (No current records), or N/A.</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Allowed Status:</span></b><span lang=EN-IE> YES (Approved), NO
+     (Disallowed), AMBIGUOUS (Conditional), or N/A (Non-applicable).</span></li>
+ <li class=MsoNormal style='margin-bottom:8.0pt;line-height:150%'><b><span
+     lang=EN-IE>Other Ineligible Service:</span></b><span lang=EN-IE> YES
+     (Operates an alternative telemetry/warden network) or NO.</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+lang=EN-IE>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>2. Master Local
+Authority Ledger</span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Index ID</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Local
+  Authority Name</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Holds Data</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Allowed
+  Status</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>Other
+  Ineligible Service</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI Reference
+  Code</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-001</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Barnsley Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>REQ722271</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-002</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Birmingham City
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>N/A</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>76892472</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-003</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Bolton Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>N/A</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>RFI 020697</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-004</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Bradford City
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>N/A</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>22740</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-005</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Bury Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>FOI2526.504</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-006</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Calderdale
+  Borough Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>250821-000551</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-007</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Coventry City
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>AMBIGUOUS</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>FOI742892894</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-008</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Doncaster
+  Borough Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>—</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-009</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Dudley Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>YES</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>NO</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>—</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-010</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Gateshead
+  Borough Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-011</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Kirklees Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-012</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Knowsley Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-013</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Leeds City
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-014</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Liverpool City
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-015</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Manchester City
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-016</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Newcastle Upon
+  Tyne City Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-017</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>North Tyneside
+  Borough Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-018</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Oldham Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-019</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Rochdale Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-020</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Rotherham
+  Borough Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-021</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Salford City
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-022</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Sandwell Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-023</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Sefton Borough
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-024</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Sheffield City
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-025</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Solihull
+  Metropolitan BC</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-026</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>South Tyneside
+  Borough Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-027</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>St Helens
+  Borough Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-028</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Stockport
+  Metropolitan BC</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><b><span lang=EN-IE>FOI-029</span></b></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>Sunderland City
+  Council</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid #363840 1.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=EN-IE>[Insert]</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
