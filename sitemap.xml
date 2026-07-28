@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+  <!-- Main Index Page -->
+  <url>
+    <loc>https://github.io</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <!-- System Architecture & Config files -->
+  <url><loc>https://github.io</loc><priority>0.80</priority></url>
+  <url><loc>https://github.io</loc><priority>0.80</priority></url>
+  <url><loc>https://github.io</loc><priority>0.80</priority></url>
+  <url><loc>https://github.io</loc><priority>0.70</priority></url>
+  <url><loc>https://github.io</loc><priority>0.70</priority></url>
+  <url><loc>https://github.io</loc><priority>0.70</priority></url>
+  <url><loc>https://github.io</loc><priority>0.60</priority></url>
+
+  <!-- Draft Report Batches 1 to 42 -->
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+  <url><loc>https://github.io</loc><priority>0.50</priority></url>
+
+  <!-- Raw Excel Table Data 1 to 16 -->
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+  <url><loc>https://github.io</loc><priority>0.40</priority></url>
+</urlset>
